@@ -75,7 +75,7 @@ class Bot {
             if(isset($radio->current->name)) $event->addResponse(Response::msg($chan, "NOW PLAYING: ".$radio->current->name));
             if(isset($radio->next->name)) $event->addResponse(Response::msg($chan, "NEXT UP: ".$radio->next->name));
             if(isset($radio->currentShow[0]->name)) $event->addResponse(Response::msg($chan, "CURRENT SHOW: ".$radio->currentShow[0]->name));
-            if(isset($this->config->additional_message)) $event->addResponse(Response::msg($chan, $this->config->additional_message));
+            if(isset($this->config->additionalmsg)) $event->addResponse(Response::msg($chan, $this->config->additionalmsg));
         });
 
         $this->irc->run();
