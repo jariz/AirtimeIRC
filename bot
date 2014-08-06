@@ -1,0 +1,8 @@
+#!/usr/bin/env php
+<?php
+
+//start composer loader
+require_once "vendor/autoload.php";
+
+//bootstrap bot
+new \AirtimeIRC\Bot(__DIR__);

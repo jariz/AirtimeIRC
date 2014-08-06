@@ -1,0 +1,23 @@
+{
+    "name": "jariz/trapped-irc",
+    "description": "IRC bot for trapped radio",
+    "minimum-stability": "dev",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "jarz",
+            "email": "the@jariz.nl"
+        }
+    ],
+    "require": {
+        "epochblue/philip": "1.1.x-dev",
+        "symfony/yaml": "2.5.x-dev",
+        "hoa/file": "dev-master",
+        "php-curl-class/php-curl-class": "1.0.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "AirtimeIRC": "lib"
+        }
+    }
+}
