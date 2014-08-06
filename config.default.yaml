@@ -1,3 +1,4 @@
+#philip config. for more info https://github.com/epochblue/philip
 server: irc.snoonet.org
 port: 6667
 ssl: false
@@ -5,9 +6,11 @@ username: yournick
 nick: yournick
 realname: yournick
 password: yourpassword
+connection_password: yourpassword
 channels: [] #put your channels in here or leave empty and use /invite to add the bot to channels
 
+#airtimeirc config
 loglevel: [info, error, plain] # Add debug to this array to get diagnostic output
-airtimeurl: http://radio.trapped.io/
-motd: "I'm the TRAPPED radio bot. Use !np to see what's playing on http://trapped.io/radio"
+airtimeurl: http://radio.trapped.io/ #ending slash required
+motd: "I'm the TRAPPED radio bot. Use !np to see what's playing on http://trapped.io/radio" #the message it says after being invited
 additionalmsg: "LISTEN @ http://trapped.io/radio" #message that will be added after the response to the !np command. remove this line if you don't want a additional message.

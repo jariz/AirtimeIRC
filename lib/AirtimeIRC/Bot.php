@@ -67,14 +67,14 @@ class Bot {
         $this->irc->onChannel('/^!np$/', function(Event $event) {
             $chan = $event->getRequest()->getSource();
             $curl = new Curl();
-            $r = $curl->get($this->config->airtimeurl);
+            $r = $curl->get($this->config->airtimeurl."/api/live-info/");
             $radio = json_decode($curl->response);
-            if($r != 0 || json_last_error() != 0) {
+            if($r != 0 || json_last_error() != 0 || is_null($radio)) {
                 $event->addResponse(Response::msg($chan, "I couldn't contact/understand the server. Please contact my admin. :'("));
             }
             if(isset($radio->current->name)) $event->addResponse(Response::msg($chan, "NOW PLAYING: ".$radio->current->name));
-            if(isset($radio->current->name)) $event->addResponse(Response::msg($chan, "NEXT UP: ".$radio->next->name));
-            if(isset($radio->next->name)) $event->addResponse(Response::msg($chan, "CURRENT SHOW: ".$radio->currentShow->name));
+            if(isset($radio->next->name)) $event->addResponse(Response::msg($chan, "NEXT UP: ".$radio->next->name));
+            if(isset($radio->currentShow->name)) $event->addResponse(Response::msg($chan, "CURRENT SHOW: ".$radio->currentShow->name));
             if(isset($this->config->additional_message)) $event->addResponse(Response::msg($chan, $this->config->additional_message));
         });
 
