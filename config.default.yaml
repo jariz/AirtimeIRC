@@ -8,6 +8,7 @@ realname: yournick
 password: yourpassword
 connection_password: yourpassword
 channels: [] #put your channels in here or leave empty and use /invite to add the bot to channels
+unflood: 500
 
 #airtimeirc config
 loglevel: [info, error, plain] # Add debug to this array to get diagnostic output

@@ -79,6 +79,9 @@ class Bot {
         });
 
         $this->irc->run();
+
+        $this->info("Bot seems to have crashed. Attempting to restart...");
+        $this->init();
     }
 
 
